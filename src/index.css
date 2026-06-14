@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Serif+JP:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #efe8dc;
+  --paper: #f8f3ea;
+  --panel-strong: #ece2d1;
+  --ink: #1f2b34;
+  --ink-soft: #4f5f69;
+  --muted: #73828a;
+  --line: rgba(85, 97, 110, 0.16);
+  --line-strong: rgba(58, 70, 84, 0.34);
+  --accent: #243848;
+  --accent-strong: #192b3c;
+  --accent-soft: rgba(36, 56, 72, 0.1);
+  --gold: #d8bb73;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(213, 181, 103, 0.12), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(107, 142, 110, 0.12), transparent 22%),
+    linear-gradient(180deg, #f3ebdf 0%, #efe8dc 42%, #ede5d8 100%);
+  font-family: 'Noto Serif JP', serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.font-display {
+  font-family: 'Cormorant Garamond', 'Noto Serif JP', serif;
+}
+
+.paper-grid {
+  background-image:
+    linear-gradient(rgba(64, 72, 84, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(64, 72, 84, 0.03) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.4), transparent 94%);
+}
+
+.field-input {
+  width: 100%;
+  border-radius: 1.25rem;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 0.875rem 1rem;
+  color: var(--ink);
+  outline: none;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background-color 180ms ease;
+}
+
+.field-input:focus {
+  border-color: var(--line-strong);
+  box-shadow: 0 0 0 3px rgba(36, 56, 72, 0.08);
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.field-input::placeholder {
+  color: var(--muted);
+}
+
+@layer base {
+  * {
+    @apply border-transparent;
+  }
+
+  body {
+    @apply antialiased;
+  }
+}
